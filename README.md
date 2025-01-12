@@ -44,3 +44,30 @@ Start the development server to view the app locally:
 
 The terminal will display the local development server's URL (e.g., http://localhost:5173). Open this URL in your browser to view the app.
 
+# Contribution Workflow
+As you make changes to your branch, follow the steps below to contribute to the main branch:
+
+## 1. Commit your changes: Ensure all your changes are committed in your branch:
+`git add . `
+`git commit -m "Your descriptive commit message"`
+
+## 2. Push your branch to the repository:
+
+`git push origin your-branch-name`
+
+## 3. Create a Pull Request (PR):
+
+Go to the GitHub repository.
+
+Navigate to the "Pull Requests" tab.
+
+Click "New Pull Request" and select your branch to merge into the `main` branch.
+
+## 4. Review and Approval: Your changes will be reviewed. Once approved, they will be merged into the main branch.
+
+Make sure to keep your branch updated by pulling the latest changes from main regularly:
+`git checkout main
+git pull origin main
+git checkout your-branch-name
+git merge main`
+
