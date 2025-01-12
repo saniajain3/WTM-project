@@ -22,7 +22,7 @@ Clone the repository from GitHub:
 
 Navigate to the project directory:
 
-    `cd WTM-project`
+    `cd WTM-project\WTM_roject`
 
 ### 2. Create a New Branch with branch name as your name 
 
