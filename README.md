@@ -66,8 +66,8 @@ Click "New Pull Request" and select your branch to merge into the `main` branch.
 ## 4. Review and Approval: Your changes will be reviewed. Once approved, they will be merged into the main branch.
 
 Make sure to keep your branch updated by pulling the latest changes from main regularly:
-`git checkout main
-git pull origin main
-git checkout your-branch-name
-git merge main`
+`git checkout main`
+`git pull origin main`
+`git checkout your-branch-name`
+`git merge main`
 
