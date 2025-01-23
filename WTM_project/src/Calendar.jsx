@@ -107,7 +107,7 @@ export default function Calendar({
 				<div className="flex items-center justify-center relative">
 					<div className="relative group">
 						<img
-							src="click-bulb1.gif"
+							src="images/click-bulb.gif"
 							className="cursor-pointer w-9"
 							alt="Info Bulb"
 						/>

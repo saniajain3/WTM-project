@@ -8,7 +8,7 @@ const PeriodCalendar = ({
 }) => {
 	return (
 		<div className=" flex flex-col items-center relative z-10">
-			<img src="calendar.gif" className="w-12 cursor-pointer " />
+			<img src="images/calendar.gif" className="w-12 cursor-pointer " />
 
 			{/* Legend Section */}
 			<div className="flex items-center justify-center relative">

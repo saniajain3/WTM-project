@@ -38,7 +38,7 @@ const Navbar = () => {
 					{/* Logo */}
 					<div className="flex-1 flex justify-center items-center md:flex-none md:w-auto md:justify-start">
 						<img
-							src="output-onlinegiftools.gif"
+							src="images/cherry-blossom.gif"
 							className="w-16 cursor-pointer"
 						/>
 						<button className="font-bold text-2xl font-inter">HerSpace</button>
