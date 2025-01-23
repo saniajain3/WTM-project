@@ -33,7 +33,7 @@ const Questions = ({
 	selectedNumMonths,
 }) => {
 	return (
-		<div className=" bg-[#ffeef9] shadow-md w-full  px-8 py-6 text-gray-900 text-xl font-bold rounded-lg">
+		<div className=" bg-[#ffeef9] shadow-md w-full  px-8 py-6 text-gray-900 text-xl font-bold rounded-lg ">
 			<h1 className="font-modelica text-pink-600 text-4xl text-center mb-6">
 				Period Tracker
 			</h1>

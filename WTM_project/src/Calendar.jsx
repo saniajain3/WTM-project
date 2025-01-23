@@ -25,8 +25,6 @@ export default function Calendar({
 	numMonths,
 }) {
 	let today = startOfToday();
-	// Ensure initial month is not null, use nextPeriodStart if available, fallback to today
-	// let startMonth = initialMonth || today;
 	let startMonth = startOfDay(initialMonth || today);
 
 	let endMonth = startOfDay(
@@ -111,7 +109,6 @@ export default function Calendar({
 							className="cursor-pointer w-9"
 							alt="Info Bulb"
 						/>
-						{/* Tooltip */}
 						<div className="absolute left-12 top-1/2 transform -translate-y-1/2 hidden group-hover:block mt-2 p-4 bg-gray-100 rounded-lg shadow-lg w-52 z-50">
 							<h3 className="text-lg font-semibold text-gray-900">
 								Calendar Legend

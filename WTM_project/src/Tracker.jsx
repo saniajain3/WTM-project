@@ -3,6 +3,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Questions from "./Questions";
 import Results from "./Results";
 import PeriodCalendar from "./PeriodCalendar";
+import Tips from "./Tips";
 
 // wrapper for background and blur
 const SectionWrapper = ({ bgImage, children }) => (
@@ -25,7 +26,7 @@ const SectionWrapper = ({ bgImage, children }) => (
 const Tracker = () => {
 	const [startDate, setStartDate] = useState(new Date());
 
-	// First Dropdown: Period Length
+	// First dropdown: period length
 	const [isLengthDropdownOpen, setIsLengthDropdownOpen] = useState(false);
 	const [selectedLength, setSelectedLength] = useState("5");
 	const lengthDropdownRef = useRef(null);
@@ -33,7 +34,7 @@ const Tracker = () => {
 		(i + 1).toString()
 	);
 
-	// Second Dropdown: Cycle Length
+	// Second dropdown: cycle length
 	const [isCycleDropdownOpen, setIsCycleDropdownOpen] = useState(false);
 	const [selectedCycle, setSelectedCycle] = useState("21");
 	const cycleDropdownRef = useRef(null);
@@ -81,10 +82,7 @@ const Tracker = () => {
 			}
 			allFertileDays.push(...fertileDays);
 
-			// Move to the next cycle
 			currentStart.setDate(currentStart.getDate() + cycleLength);
-
-			// Update the next period start and end date for the first cycle
 
 			if (n === 0) {
 				setNextPeriodStart(periodDays[0]);
@@ -128,20 +126,21 @@ const Tracker = () => {
 		setSelectedCycle("21");
 	};
 
-	// fourth Dropdown: Period length
+	// fourth Dropdown: how many months
 	const [isMonthsDropdownOpen, setIsMonthsDropdownOpen] = useState(false);
 	const [selectedNumMonths, setSelectedNumMonths] = useState("1");
 	const monthsRef = useRef(null);
 	const monthOptions = Array.from({ length: 10 }, (_, i) => (i + 1).toString());
 
 	return (
-		<div className="min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 2xl:px-64">
+		<div className="min-h-screen px-4 sm:px-8 md:px-16 xl:px-40 2xl:px-64">
 			<div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 py-8">
 				{/* questions section */}
 				<div
-					className={`lg:col-span-1 ${
+					className={`lg:col-span-1  md:col-span-2 ${
 						!isCalculated
-							? "flex justify-center items-center lg:col-span-3 lg:w-3/5  h-screen"
+							? //? " lg:col-span-2 w-4/5 max-w-screen-xl mx-auto md:px-8 lg:px-4"
+							  "lg:col-span-3 max-w-screen-lg mx-auto"
 							: "lg:col-span-1 "
 					}`}
 				>
@@ -171,9 +170,9 @@ const Tracker = () => {
 					/>
 				</div>
 
-				{/* results Section */}
+				{/* results section */}
 				{isCalculated && (
-					<SectionWrapper bgImage="cherry.jpeg">
+					<SectionWrapper bgImage="images/cherry.jpeg">
 						<Results
 							cyclePhases={cyclePhases}
 							nextPeriodStart={nextPeriodStart}
@@ -182,10 +181,10 @@ const Tracker = () => {
 					</SectionWrapper>
 				)}
 
-				{/* Calendar Section */}
+				{/* calendar section */}
 				{isCalculated && (
-					<div className="flex">
-						<SectionWrapper bgImage="tulips.jpeg">
+					<div className="lg:col-span-1 md:col-span-1 lg:max-w-screen-sm mx-auto lg:mx-0 h-full flex">
+						<SectionWrapper bgImage="images/tulips.jpeg">
 							<PeriodCalendar
 								cyclePhases={cyclePhases}
 								nextPeriodStart={nextPeriodStart}
@@ -196,13 +195,13 @@ const Tracker = () => {
 					</div>
 				)}
 
-				{/* tips Section */}
+				{/* tips section */}
 			</div>
-			<Tips />
+			<div className="bg-[#ffe1ea] lg:col-span-3 max-w-screen-lg mx-auto w-3/5 md:px-8 sm:px-8 lg:px-4  shadow-md rounded-lg py-5 my-9">
+				<Tips />
+			</div>
 		</div>
 	);
 };
 
 export default Tracker;
-
-//bg-gradient-to-r from-pink-100 to-purple-100

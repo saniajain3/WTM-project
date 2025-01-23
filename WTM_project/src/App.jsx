@@ -11,7 +11,6 @@ export default function App() {
 			<Routes>
 				<Route path="/" element={<Tracker />} /> {/* Default route */}
 				<Route path="/tracker" element={<Tracker />} />
-				{/* <Route path="/eg" element={<Eg />} /> */}
 			</Routes>
 		</div>
 	);

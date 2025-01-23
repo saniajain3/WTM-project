@@ -32,10 +32,10 @@ const Navbar = () => {
 
 	return (
 		<header className="sticky top-0 z-50 left-0 shadow-md bg-white rounded py-4 w-full">
-			{/* Navbar Container */}
+			{/* Navbar */}
 			<div className="max-w-screen-xl mx-auto md:px-8 sm:px-8 lg:px-4">
 				<div className="flex items-center justify-between">
-					{/* Logo */}
+					{/*logo */}
 					<div className="flex-1 flex justify-center items-center md:flex-none md:w-auto md:justify-start">
 						<img
 							src="images/cherry-blossom.gif"
@@ -44,9 +44,9 @@ const Navbar = () => {
 						<button className="font-bold text-2xl font-inter">HerSpace</button>
 					</div>
 
-					{/* Mobile Menu Button */}
+					{/* mobile menu  */}
 					<div className="flex items-center md:hidden">
-						{/* Search Button */}
+						{/* search  */}
 						<div>
 							<button className="text-2xl hover:bg-[#fee7b1] rounded-full p-2 duration-140">
 								<CiSearch />
@@ -57,9 +57,8 @@ const Navbar = () => {
 						</button>
 					</div>
 
-					{/* Laptop Menu */}
+					{/* laptop menu */}
 					<div className="hidden md:flex items-center space-x-5 ml-auto">
-						{/* Menu Items */}
 						<ul className="flex space-x-6">
 							{menuItems.map((item) => {
 								return (
@@ -74,14 +73,13 @@ const Navbar = () => {
 								);
 							})}
 						</ul>
-						{/* Login Button */}
+
 						<div>
 							<button className="font-bold text-[#d3a645] border-2 border-[#bb963e]  hover:text-gray-900 hover:bg-[#ffe9bc] rounded-3xl p-2 duration-200">
 								Login
 							</button>
 						</div>
 
-						{/* Search Button */}
 						<div>
 							<button className="text-2xl hover:bg-[#fee7b1] rounded-full p-2 duration-140">
 								<CiSearch />
@@ -91,10 +89,9 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			{/* Mobile Menu */}
+			{/* mobile menu */}
 			{isMenuOpen ? (
 				<div className="flex flex-col items-center justify-center pt-4 h-screen md:hidden space-y-6">
-					{/* Menu Items */}
 					<MobileMenu isMenuOpen={isMenuOpen} />
 				</div>
 			) : null}
@@ -102,17 +99,3 @@ const Navbar = () => {
 	);
 };
 export default Navbar;
-
-{
-	/* <svg
-							fill="none"
-							stroke="currentColor"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth="2"
-							viewBox="0 0 24 24"
-							className="w-6 h-6"
-						>
-							<path d="M4 6h16M4 12h16M4 18h16"></path>
-						</svg> */
-}
