@@ -1,68 +1,105 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
+/* CSS */
+/* CSS */
+/* :root {
+	font-family: Inter, sans-serif;
+	font-feature-settings: "liga" 1, "calt" 1;
+	'cv11':1 ;
 }
+@supports (font-variation-settings: normal) {
+	:root {
+		font-family: InterVariable, sans-serif;
+	}
+} */
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+@font-face {
+	font-family: "Bw Modelica LGC";
+	src: url("/fonts/Bw Modelica/otf/BwModelica-Bold.otf") format("opentype");
+	font-weight: bold;
+	font-display: swap;
 }
-a:hover {
-  color: #535bf2;
+@font-face {
+	font-family: "Bw Modelica LGC";
+	src: url("/fonts/Bw Modelica/otf/BwModelica-Regular.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+	font-family: "Montserrat", sans-serif;
+	/* font-family: "Tektur", sans-serif; */
+
+	background-image: radial-gradient(
+		circle,
+		#f6f2ff,
+		#fff2fb,
+		#fff3f1,
+		#fff8e9,
+		#ffffe8
+	);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+/* background-image: linear-gradient(
+		to left bottom,
+		#ffeef2,
+		#fff0e9,
+		#fdf4e3,
+		#edfae7,
+		#ddfff7
+	); */
+/* background-image: linear-gradient(
+		to left bottom,
+		#f0eff4,
+		#f7ebf2,
+		#fee8e7,
+		#fde7d9,
+		#eeebd0
+	); */
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+/* #FFFFE8*/
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+/* background-image: linear-gradient(
+		to left bottom,
+		#f0eff4,
+		#f7ebf2,
+		#fee8e7,
+		#fde7d9,
+		#eeebd0
+	); */
+/* background-image: linear-gradient(
+		to left bottom,
+		#ffdde1,
+		#ffdfe6,
+		#ffe0ea,
+		#ffe2ef,
+		#ffe4f3
+	); */
+/* background-image: linear-gradient(
+		to left bottom,
+		#ffeef2,
+		#ffebf2,
+		#ffe9f2,
+		#ffe6f2,
+		#ffe4f3
+	); */
+/* background-image: linear-gradient(
+		to left bottom,
+		#f1e4f3,
+		#ffe7ee,
+		#ffede8,
+		#fff5e4,
+		#ffffe8
+	); */
+/* #EAF2D7 */
+
+/* .calendar {
+	margin-left: 120px;
+} */
