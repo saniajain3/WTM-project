@@ -24,11 +24,8 @@ Navigate to the project directory:
 
     `cd WTM-project\WTM_roject`
 
-### 2. Create a New Branch with branch name as your name 
 
-`git checkout -b your-branch-name`
-
-### 3. Install Dependencies
+### 2. Install Dependencies
 
 Install all required dependencies using npm:
 
@@ -36,7 +33,7 @@ Install all required dependencies using npm:
 
 This will download and set up the necessary packages as listed in package.json.
 
-### 4. Run the Development Server
+### 3. Run the Development Server
 
 Start the development server to view the app locally:
 
