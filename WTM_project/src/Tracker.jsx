@@ -4,7 +4,7 @@ import Questions from "./Questions";
 import Results from "./Results";
 import PeriodCalendar from "./PeriodCalendar";
 
-// Reusable wrapper for background and blur
+// wrapper for background and blur
 const SectionWrapper = ({ bgImage, children }) => (
 	<div
 		className="relative flex flex-col bg-white shadow-md w-fit py-8 px-5 rounded-lg"
@@ -128,163 +128,16 @@ const Tracker = () => {
 		setSelectedCycle("21");
 	};
 
-	// Fourth Dropdown: Period Length
+	// fourth Dropdown: Period length
 	const [isMonthsDropdownOpen, setIsMonthsDropdownOpen] = useState(false);
 	const [selectedNumMonths, setSelectedNumMonths] = useState("1");
 	const monthsRef = useRef(null);
 	const monthOptions = Array.from({ length: 10 }, (_, i) => (i + 1).toString());
 
-	// return (
-	// 	// <div className="w-full px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 2xl:px-64">
-	// 	// 	<div className="flex flex-wrap justify-center lg:flex-nowrap px-10 py-8 space-y-6 lg:space-y-0 lg:space-x-8">
-	// 	// 		{/* Left Section - Questions */}
-	// 	// 		<Questions
-	// 	// 			startDate={startDate}
-	// 	// 			setStartDate={setStartDate}
-	// 	// 			lengthDropdownRef={lengthDropdownRef}
-	// 	// 			cycleDropdownRef={cycleDropdownRef}
-	// 	// 			isLengthDropdownOpen={isLengthDropdownOpen}
-	// 	// 			setIsLengthDropdownOpen={setIsLengthDropdownOpen}
-	// 	// 			isCycleDropdownOpen={isCycleDropdownOpen}
-	// 	// 			setIsCycleDropdownOpen={setIsCycleDropdownOpen}
-	// 	// 			selectedLength={selectedLength}
-	// 	// 			selectedCycle={selectedCycle}
-	// 	// 			setSelectedCycle={setSelectedCycle}
-	// 	// 			setSelectedLength={setSelectedLength}
-	// 	// 			cycleOptions={cycleOptions}
-	// 	// 			lengthOptions={lengthOptions}
-	// 	// 			monthOptions={monthOptions}
-	// 	// 			monthsRef={monthsRef}
-	// 	// 			setIsMonthsDropdownOpen={setIsMonthsDropdownOpen}
-	// 	// 			isMonthsDropdownOpen={isMonthsDropdownOpen}
-	// 	// 			setSelectedNumMonths={setSelectedNumMonths}
-	// 	// 			calculateDates={calculateDates}
-	// 	// 			handleResetValues={handleResetValues}
-	// 	// 			selectedNumMonths={selectedNumMonths}
-	// 	// 		/>
-	// 	// 		{/* Right Section - Calendar */}
-	// 	// 		{isCalculated && (
-	// 	// 			<>
-	// 	// 				{/* Calculated Results */}
-	// 	// 				<div
-	// 	// 					className="flex flex-col items-center shadow-md w-fit lg:w-1/3 py-8 px-5 rounded-lg"
-	// 	// 					style={{
-	// 	// 						position: "relative",
-	// 	// 					}}
-	// 	// 				>
-	// 	// 					{/* Background Image */}
-	// 	// 					<div
-	// 	// 						className="absolute inset-0 bg-cover bg-center z-0"
-	// 	// 						style={{
-	// 	// 							backgroundImage: "url('cherry.jpeg')",
-	// 	// 							backgroundSize: "cover",
-	// 	// 							backgroundPosition: "center",
-	// 	// 						}}
-	// 	// 					></div>
-	// 	// 					{/* Blur Overlay on Background */}
-	// 	// 					<div className="absolute inset-0 backdrop-blur-[2px] bg-white/30 z-0 rounded-lg"></div>
-	// 	// 					{/* Content */}
-	// 	// 					<Results
-	// 	// 						cyclePhases={cyclePhases}
-	// 	// 						nextPeriodStart={nextPeriodStart}
-	// 	// 						nextPeriodEndDate={nextPeriodEndDate}
-	// 	// 					/>
-	// 	// 				</div>
-
-	// 	// 				{/* Tulips Calendar */}
-	// 	// 				<div
-	// 	// 					className="relative flex flex-col bg-white shadow-md w-fit lg:w-1/3 py-8 px-5 rounded-lg"
-	// 	// 					style={{
-	// 	// 						position: "relative",
-	// 	// 					}}
-	// 	// 				>
-	// 	// 					{/* Background Image */}
-	// 	// 					<div
-	// 	// 						className="absolute inset-0 bg-cover bg-center z-0"
-	// 	// 						style={{
-	// 	// 							backgroundImage: "url('tulips.jpeg')",
-	// 	// 							backgroundSize: "cover",
-	// 	// 							backgroundPosition: "center",
-	// 	// 						}}
-	// 	// 					></div>
-
-	// 	// 					{/* Blur Overlay on Background */}
-	// 	// 					<div className="absolute inset-0 backdrop-blur-[2px] bg-white/40 z-0 rounded-lg"></div>
-
-	// 	// 					{/* Content */}
-	// 	// 					<PeriodCalendar
-	// 	// 						cyclePhases={cyclePhases}
-	// 	// 						nextPeriodStart={nextPeriodStart}
-	// 	// 						isCalculated={isCalculated}
-	// 	// 						selectedNumMonths={selectedNumMonths}
-	// 	// 					/>
-	// 	// 				</div>
-	// 	// 			</>
-	// 	// 		)}
-	// 	// 	</div>
-	// 	// </div>
-
-	// 	<div className="min-h-screen bg-gradient-to-r from-pink-100 to-purple-100 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 2xl:px-64">
-	// 		{/* Main Container */}
-	// 		<div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 auto-rows-auto py-8">
-	// 			{/* Questions Section */}
-	// 			<div className="bg-white shadow-md rounded-lg p-6 lg:col-span-1">
-	// 				<Questions
-	// 					startDate={startDate}
-	// 					setStartDate={setStartDate}
-	// 					lengthDropdownRef={lengthDropdownRef}
-	// 					cycleDropdownRef={cycleDropdownRef}
-	// 					isLengthDropdownOpen={isLengthDropdownOpen}
-	// 					setIsLengthDropdownOpen={setIsLengthDropdownOpen}
-	// 					isCycleDropdownOpen={isCycleDropdownOpen}
-	// 					setIsCycleDropdownOpen={setIsCycleDropdownOpen}
-	// 					selectedLength={selectedLength}
-	// 					selectedCycle={selectedCycle}
-	// 					setSelectedCycle={setSelectedCycle}
-	// 					setSelectedLength={setSelectedLength}
-	// 					cycleOptions={cycleOptions}
-	// 					lengthOptions={lengthOptions}
-	// 					monthOptions={monthOptions}
-	// 					monthsRef={monthsRef}
-	// 					setIsMonthsDropdownOpen={setIsMonthsDropdownOpen}
-	// 					isMonthsDropdownOpen={isMonthsDropdownOpen}
-	// 					setSelectedNumMonths={setSelectedNumMonths}
-	// 					calculateDates={calculateDates}
-	// 					handleResetValues={handleResetValues}
-	// 					selectedNumMonths={selectedNumMonths}
-	// 				/>
-	// 			</div>
-
-	// 			{/* Results Section */}
-	// 			{isCalculated && (
-	// 				<div className="bg-white shadow-md rounded-lg p-6 lg:col-span-1">
-	// 					<Results
-	// 						cyclePhases={cyclePhases}
-	// 						nextPeriodStart={nextPeriodStart}
-	// 						nextPeriodEndDate={nextPeriodEndDate}
-	// 					/>
-	// 				</div>
-	// 			)}
-
-	// 			{/* Calendar Section */}
-	// 			{isCalculated && (
-	// 				<div className="bg-white shadow-md rounded-lg p-6 lg:col-span-1">
-	// 					<PeriodCalendar
-	// 						cyclePhases={cyclePhases}
-	// 						nextPeriodStart={nextPeriodStart}
-	// 						isCalculated={isCalculated}
-	// 						selectedNumMonths={selectedNumMonths}
-	// 					/>
-	// 				</div>
-	// 			)}
-	// 		</div>
-	// 	</div>
-	// );
 	return (
 		<div className="min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 xl:px-40 2xl:px-64">
-			{/* Main Container */}
 			<div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 py-8">
-				{/* Questions Section */}
+				{/* questions section */}
 				<div
 					className={`lg:col-span-1 ${
 						!isCalculated
@@ -318,7 +171,7 @@ const Tracker = () => {
 					/>
 				</div>
 
-				{/* Results Section */}
+				{/* results Section */}
 				{isCalculated && (
 					<SectionWrapper bgImage="cherry.jpeg">
 						<Results
@@ -343,24 +196,9 @@ const Tracker = () => {
 					</div>
 				)}
 
-				{/* Tips Section */}
+				{/* tips Section */}
 			</div>
-			<div className="bg-slate-200 shadow-md rounded-lg py-5 lg:col-span-3">
-				<h2 className="text-lg font-semibold mb-4 text-center">
-					Tips During Your Period
-				</h2>
-				<div className="flex flex-col items-center space-y-4">
-					<p className="text-gray-700 text-sm">
-						Stay hydrated by drinking plenty of water to reduce bloating.
-					</p>
-					<p className="text-gray-700 text-sm">
-						Engage in light exercises like yoga to ease cramps.
-					</p>
-					<p className="text-gray-700 text-sm">
-						Eat a balanced diet rich in iron and magnesium to counter fatigue.
-					</p>
-				</div>
-			</div>
+			<Tips />
 		</div>
 	);
 };
