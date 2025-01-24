@@ -176,7 +176,6 @@ const Questions = ({
 				/>
 			</div>
 
-			{/* Calculate Button */}
 			<Buttons onCalculate={calculateDates} onReset={handleResetValues} />
 		</div>
 	);

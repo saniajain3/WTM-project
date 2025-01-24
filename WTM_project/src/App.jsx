@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Tracker from "./Tracker";
-// import Eg from "./Eg";
 
 export default function App() {
 	return (

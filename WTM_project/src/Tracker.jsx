@@ -139,8 +139,7 @@ const Tracker = () => {
 				<div
 					className={`lg:col-span-1  md:col-span-2 ${
 						!isCalculated
-							? //? " lg:col-span-2 w-4/5 max-w-screen-xl mx-auto md:px-8 lg:px-4"
-							  "lg:col-span-3 max-w-screen-lg mx-auto"
+							? "lg:col-span-3 max-w-screen-lg mx-auto"
 							: "lg:col-span-1 "
 					}`}
 				>
