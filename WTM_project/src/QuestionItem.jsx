@@ -1,4 +1,4 @@
-const QuestionItem = ({ icon, question, content, contentClassName = "" }) => {
+const QuestionItem = ({ icon, question, content }) => {
 	return (
 		<div className="p-4">
 			<div className="flex items-center">

@@ -3,8 +3,7 @@ import {
 	MdKeyboardArrowDown,
 	MdKeyboardArrowUp,
 } from "react-icons/md";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "./DatePicker";
 import Buttons from "./Buttons";
 import QuestionItem from "./QuestionItem";
 
@@ -33,8 +32,8 @@ const Questions = ({
 	selectedNumMonths,
 }) => {
 	return (
-		<div className=" bg-[#ffeef9] shadow-md w-full  px-8 py-6 text-gray-900 text-xl font-bold rounded-lg ">
-			<h1 className="font-modelica text-pink-600 text-4xl text-center mb-6">
+		<div className=" bg-[#ffeef9] shadow-md w-full  px-8 py-6 text-gray-900 text-xl font-inter rounded-lg ">
+			<h1 className="font-modelica font-bold text-pink-600 text-4xl text-center mb-6">
 				Period Tracker
 			</h1>
 
@@ -45,11 +44,10 @@ const Questions = ({
 					icon={<MdInfoOutline />}
 					question="First day of your last period?"
 					content={
-						<div className="flex justify-center md:flex-none md:justify-normal">
+						<div className="flex justify-center  md:flex-none md:justify-normal  md:ml-0 lg:ml-0 xl:ml-0">
 							<DatePicker
 								selected={startDate}
 								onChange={(date) => setStartDate(date)}
-								className="shadow w-4/5 lg:w-2/3 mt-2 border rounded-md p-2 text-gray-700"
 							/>
 						</div>
 					}
@@ -66,7 +64,7 @@ const Questions = ({
 						>
 							<button
 								onClick={() => setIsLengthDropdownOpen(!isLengthDropdownOpen)}
-								className="shadow w-1/2 md:w-1/3 lg:w-1/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700"
+								className="shadow w-1/2 md:w-1/3 lg:w-2/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700 font-medium"
 							>
 								{selectedLength}
 								{isLengthDropdownOpen ? (
@@ -84,7 +82,7 @@ const Questions = ({
 												setSelectedLength(option);
 												setIsLengthDropdownOpen(false);
 											}}
-											className="p-2 hover:bg-gray-200 cursor-pointer"
+											className="font-medium p-2 hover:bg-gray-200 cursor-pointer"
 										>
 											{option}
 										</li>
@@ -106,7 +104,7 @@ const Questions = ({
 						>
 							<button
 								onClick={() => setIsCycleDropdownOpen(!isCycleDropdownOpen)}
-								className="shadow w-1/2 md:w-1/3 lg:w-1/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700"
+								className="shadow w-1/2 md:w-1/3 lg:w-2/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700 font-medium "
 							>
 								{selectedCycle}
 								{isCycleDropdownOpen ? (
@@ -124,7 +122,7 @@ const Questions = ({
 												setSelectedCycle(option);
 												setIsCycleDropdownOpen(false);
 											}}
-											className="p-2 hover:bg-gray-200 cursor-pointer"
+											className="font-medium p-2 hover:bg-gray-200 cursor-pointer"
 										>
 											{option}
 										</li>
@@ -146,7 +144,7 @@ const Questions = ({
 						>
 							<button
 								onClick={() => setIsMonthsDropdownOpen(!isMonthsDropdownOpen)}
-								className="shadow w-1/2 md:w-1/3 lg:w-1/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700"
+								className="shadow w-1/2 md:w-1/3 lg:w-2/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700 font-medium "
 							>
 								{selectedNumMonths}
 								{isMonthsDropdownOpen ? (
@@ -164,7 +162,7 @@ const Questions = ({
 												setSelectedNumMonths(option);
 												setIsMonthsDropdownOpen(false);
 											}}
-											className="p-2 hover:bg-gray-200 cursor-pointer"
+											className="font-medium p-2 hover:bg-gray-200 cursor-pointer"
 										>
 											{option}
 										</li>

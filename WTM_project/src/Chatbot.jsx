@@ -3,7 +3,6 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import ChatMessage from "./ChatMessage";
 import ChatForm from "./ChatForm";
 import { useEffect, useState, useRef } from "react";
-// import { TbMessageChatbot } from "react-icons/tb";
 import { IoChatboxOutline } from "react-icons/io5";
 
 export default function Chatbot() {
@@ -12,10 +11,10 @@ export default function Chatbot() {
 	const chatBodyRef = useRef();
 
 	async function generateBotResponse(history, attempt = 1) {
-		const MAX_ATTEMPTS = 3; // Maximum number of retry attempts
+		const MAX_ATTEMPTS = 3; //  number of retry attempts
 
 		try {
-			const apiKey = "AIzaSyBGa03rLGbh3GYOSDEpXXlWlioRjFcb1MI"; // Replace with your secured API key
+			const apiKey = "AIzaSyBGa03rLGbh3GYOSDEpXXlWlioRjFcb1MI";
 			const contents = history
 				.filter((msg) => msg.text.trim() !== "")
 				.map((msg) => ({
@@ -86,7 +85,6 @@ export default function Chatbot() {
 				onClick={() => setShowChatbot((prev) => !prev)}
 				id="chatbot-toggler"
 			>
-				{/* <TbMessageChatbot /> */}
 				{showChatbot ? (
 					<span>&#10005;</span>
 				) : (
