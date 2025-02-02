@@ -171,7 +171,7 @@ const Tracker = () => {
 
 				{/* results section */}
 				{isCalculated && (
-					<SectionWrapper bgImage="images/cherry.jpeg">
+					<SectionWrapper bgImage="/images/cherry.jpeg">
 						<Results
 							cyclePhases={cyclePhases}
 							nextPeriodStart={nextPeriodStart}
@@ -183,7 +183,7 @@ const Tracker = () => {
 				{/* calendar section */}
 				{isCalculated && (
 					<div className="lg:col-span-1 md:col-span-1 lg:max-w-screen-sm mx-auto lg:mx-0 h-full flex">
-						<SectionWrapper bgImage="images/tulips.jpeg">
+						<SectionWrapper bgImage="/images/tulips.jpeg">
 							<PeriodCalendar
 								cyclePhases={cyclePhases}
 								nextPeriodStart={nextPeriodStart}

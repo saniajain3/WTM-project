@@ -10,4 +10,5 @@ export default defineConfig({
 			plugins: [tailwindcss], // Add Tailwind CSS here
 		},
 	},
+	assetsInclude: ["**/*.gif", "**/*.jpeg", "**/*.jpg", "**/*.png", "**/*.svg"],
 });
