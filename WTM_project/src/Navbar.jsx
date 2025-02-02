@@ -3,10 +3,7 @@ import { CiSearch } from "react-icons/ci";
 import HamburgerComponent from "./HamburgerComponent";
 import MobileMenu from "./MobileMenu";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock-upgrade";
-import { CIcon } from "@coreui/icons-react";
-import * as icon from "@coreui/icons";
-
-import { cilMagnifyingGlass } from "@coreui/icons";
+import logo from "/images/cherry-blossom.gif";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,11 +51,7 @@ const Navbar = () => {
 				<div className="flex items-center justify-between">
 					{/* Logo */}
 					<div className="flex-1 flex justify-center items-center md:flex-none md:w-auto md:justify-start">
-						<img
-							src="images/cherry-blossom.gif"
-							className="w-16 cursor-pointer"
-							alt="Logo"
-						/>
+						<img src={logo} className="w-16 cursor-pointer" alt="Logo" />
 						<button className="font-[600] text-3xl font-inter">HerSpace</button>
 					</div>
 
