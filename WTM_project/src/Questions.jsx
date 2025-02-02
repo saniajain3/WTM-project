@@ -43,7 +43,7 @@ const Questions = ({
 				{/* Q1 */}
 				<QuestionItem
 					icon={<MdInfoOutline />}
-					question="How long does your period usually last?"
+					question="First day of your last period?"
 					content={
 						<div className="flex justify-center md:flex-none md:justify-normal">
 							<DatePicker
@@ -58,7 +58,7 @@ const Questions = ({
 				{/* Q2 */}
 				<QuestionItem
 					icon={<MdInfoOutline />}
-					question="How long does your period usually last?"
+					question="How long does it usually last?"
 					content={
 						<div
 							ref={lengthDropdownRef}
