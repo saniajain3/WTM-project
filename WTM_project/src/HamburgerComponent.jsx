@@ -1,4 +1,4 @@
-import { Hamburger } from "hamburger-react";
+import Hamburger from "hamburger-react";
 
 export default function HamburgerComponent({ toggled, toggle, size = 20 }) {
 	return (
