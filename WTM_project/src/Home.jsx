@@ -28,7 +28,7 @@ export default function Home() {
 						Welcome to HerSpace🌸
 					</h1>
 					<p
-						className="text-base xl:text-sm font-modelica text-center home-desc mb-2"
+						className="text-sm md:text-base xl:text-lg font-modelica text-center home-desc mb-2"
 						style={{ marginTop: "-6px" }}
 					>
 						Empowering women at every stage of life
