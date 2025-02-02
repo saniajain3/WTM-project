@@ -4,7 +4,7 @@ import tailwindcss from "tailwindcss"; // Import Tailwind CSS
 
 export default defineConfig({
 	plugins: [react()],
-	base: "./", // You can change to '/' if needed, depending on your deployment needs
+	base: "/", // You can change to '/' if needed, depending on your deployment needs
 	css: {
 		postcss: {
 			plugins: [tailwindcss], // Add Tailwind CSS here
