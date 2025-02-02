@@ -10,63 +10,7 @@ export default function Chatbot() {
 	const [chatHistory, setChatHistory] = useState([]);
 	const [showChatbot, setShowChatbot] = useState(false);
 	const chatBodyRef = useRef();
-	// async function generateBotResponse(history) {
-	// 	try {
-	// 		const apiKey = "AIzaSyBGa03rLGbh3GYOSDEpXXlWlioRjFcb1MI";
 
-	// 		const contextMessage = {
-	// 			role: "user",
-	// 			parts: [
-	// 				{
-	// 					text: "You are a friendly, knowledgeable assistant for HerSpace—a platform dedicated to empowering women through tailored advice on period tracking, career development, and lifestyle tips. Provide supportive, empathetic, and accurate responses.",
-	// 				},
-	// 			],
-	// 		};
-
-	// 		const contents = [
-	// 			contextMessage,
-	// 			...history
-	// 				.filter((msg) => msg.text.trim() !== "")
-	// 				.map((msg) => ({
-	// 					role: msg.role === "bot" ? "model" : msg.role,
-	// 					parts: [{ text: msg.text }],
-	// 				})),
-	// 		];
-	// 		const response = await fetch(
-	// 			`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
-	// 			{
-	// 				method: "POST",
-	// 				headers: { "Content-Type": "application/json" },
-	// 				body: JSON.stringify({ contents }),
-	// 			}
-	// 		);
-
-	// 		const responseText = await response.text();
-	// 		console.log("API Raw Response:", responseText);
-
-	// 		const data = JSON.parse(responseText);
-
-	// 		// missing or unexpected API response structure
-	// 		const botMessage =
-	// 			data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
-	// 		if (!botMessage) {
-	// 			throw new Error("Empty or invalid response from API");
-	// 		}
-
-	// 		// updates the last bot message and removes the thinking text dynamically
-	// 		setChatHistory((prevHistory) =>
-	// 			prevHistory.map((msg) =>
-	// 				msg.text === "Thinking..." ? { role: "bot", text: botMessage } : msg
-	// 			)
-	// 		);
-	// 	} catch (error) {
-	// 		console.error("Error in bot response:", error);
-	// 		setChatHistory((prevHistory) => [
-	// 			...prevHistory,
-	// 			{ role: "bot", text: "Error occurred while processing the response." },
-	// 		]);
-	// 	}
-	// }
 	async function generateBotResponse(history, attempt = 1) {
 		const MAX_ATTEMPTS = 3; // Maximum number of retry attempts
 
@@ -136,7 +80,7 @@ export default function Chatbot() {
 		<div
 			className={`chatbot ${
 				showChatbot ? "show-chatbot" : ""
-			} min-h-screen flex justify-center items-center font-inter px-4 sm:px-8 md:px-16 xl:px-40 2xl:px-64`}
+			} min-h-screen flex justify-center items-center font-inter px-4 sm:px-18 md:px-16 xl:px-40 2xl:px-64`}
 		>
 			<button
 				onClick={() => setShowChatbot((prev) => !prev)}

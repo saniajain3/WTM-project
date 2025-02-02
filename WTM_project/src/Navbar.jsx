@@ -8,15 +8,15 @@ import logo from "/images/cherry-blossom.gif";
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	// Toggle mobile menu
+	// toggle mobile menu
 	const toggleMenu = () => {
 		if (!isMenuOpen) {
-			window.scrollTo(0, 0); // Reset scroll position to top when opening the menu
+			window.scrollTo(0, 0); // reset scroll position to top when opening the menu
 		}
 		setIsMenuOpen(!isMenuOpen);
 	};
 
-	// Handle body scroll lock for mobile menu
+	// body scroll lock for mobile menu
 	useEffect(() => {
 		if (isMenuOpen) {
 			disableBodyScroll(document.body);
@@ -52,7 +52,9 @@ const Navbar = () => {
 					{/* Logo */}
 					<div className="flex-1 flex justify-center items-center md:flex-none md:w-auto md:justify-start">
 						<img src={logo} className="w-16 cursor-pointer" alt="Logo" />
-						<button className="font-[600] text-3xl font-inter">HerSpace</button>
+						<button className="font-[600] text-[26px] md:text-2xl xl:text-3xl  font-inter">
+							HerSpace
+						</button>
 					</div>
 
 					{/* Mobile menu */}

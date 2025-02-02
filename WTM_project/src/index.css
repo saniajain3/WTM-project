@@ -58,7 +58,7 @@ body {
 	-webkit-background-clip: text;
 	color: transparent;
 	animation: gradient 4s ease infinite;
-	font-size: 18px;
+	/* font-size: 18px; */
 }
 
 @keyframes gradient {
@@ -115,7 +115,7 @@ html {
 .chatbot {
 	position: fixed;
 	bottom: 30px;
-	right: 35px;
+	right: 25px;
 	z-index: 1000;
 }
 
@@ -140,8 +140,12 @@ html {
 	z-index: 1001;
 }
 
-/* rgba(253,125,160,255)
-rgba(252,190,185,255) */
+@media screen and (min-width: 350px) and (max-width: 767px) {
+	.chatbot-popup {
+		right: 28px;
+		width: 350px;
+	}
+}
 
 .chatbot.show-chatbot .chatbot-popup {
 	opacity: 1;
