@@ -1,7 +1,7 @@
 [build]
-  base = ""
-  publish = "dist"
+  publish = "WTM_project/dist"
   command = "npm run build"
+
 
 [dev]
   command = "npm run dev"
@@ -12,4 +12,7 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true
+  
+  
+[functions]
+  directory = "netlify/functions"
