@@ -1,7 +1,8 @@
+import menstruation from "/images/menstruation.gif";
 const Results = ({ cyclePhases, nextPeriodStart, nextPeriodEndDate }) => {
 	return (
 		<div className="flex flex-col items-center relative z-10">
-			<img src="images/menstruation.gif" className="w-12 cursor-pointer " />
+			<img src={menstruation} className="w-12 cursor-pointer " />
 			<h1 className="text-2xl font-semibold pt-2 pb-6 text-center">
 				Calculated Results
 			</h1>

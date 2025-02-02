@@ -4,7 +4,9 @@ import Questions from "./Questions";
 import Results from "./Results";
 import PeriodCalendar from "./PeriodCalendar";
 import Tips from "./Tips";
-
+// import cherryImage from "images/cherry-blossom.gif";
+import cherryBgImage from "/images/cherry.jpeg";
+import tulips from "/images/tulips.jpeg";
 // wrapper for background and blur
 const SectionWrapper = ({ bgImage, children }) => (
 	<div
@@ -171,7 +173,7 @@ const Tracker = () => {
 
 				{/* results section */}
 				{isCalculated && (
-					<SectionWrapper bgImage="/images/cherry.jpeg">
+					<SectionWrapper bgImage={cherryBgImage}>
 						<Results
 							cyclePhases={cyclePhases}
 							nextPeriodStart={nextPeriodStart}
@@ -183,7 +185,7 @@ const Tracker = () => {
 				{/* calendar section */}
 				{isCalculated && (
 					<div className="lg:col-span-1 md:col-span-1 lg:max-w-screen-sm mx-auto lg:mx-0 h-full flex">
-						<SectionWrapper bgImage="/images/tulips.jpeg">
+						<SectionWrapper bgImage={tulips}>
 							<PeriodCalendar
 								cyclePhases={cyclePhases}
 								nextPeriodStart={nextPeriodStart}

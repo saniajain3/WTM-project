@@ -1,5 +1,5 @@
 import Calendar from "./Calendar";
-
+import calendar from "/images/calendar.gif";
 const PeriodCalendar = ({
 	cyclePhases,
 	nextPeriodStart,
@@ -8,7 +8,7 @@ const PeriodCalendar = ({
 }) => {
 	return (
 		<div className=" flex flex-col items-center relative z-10">
-			<img src="images/calendar.gif" className="w-12 cursor-pointer " />
+			<img src={calendar} className="w-12 cursor-pointer " />
 
 			<div className="flex items-center justify-center relative">
 				<h2 className="text-xl font-semibold text-center">

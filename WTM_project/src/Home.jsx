@@ -1,3 +1,4 @@
+import pastel from "/images/pastel.jpeg";
 const SectionWrapper = ({ bgImage, children }) => (
 	<div className="relative flex flex-col bg-white shadow-md w-fit py-8 px-5 rounded-lg">
 		<div
@@ -15,7 +16,7 @@ const SectionWrapper = ({ bgImage, children }) => (
 export default function Home() {
 	return (
 		<div className="flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 xl:px-40 2xl:px-80 py-8">
-			<SectionWrapper bgImage="images/pastel.jpeg">
+			<SectionWrapper bgImage={pastel}>
 				{/* Introduction Section */}
 				<section
 					id="home"
