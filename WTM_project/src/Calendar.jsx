@@ -114,7 +114,7 @@ export default function Calendar({
 					</div>
 				</div>
 				<h2 className="font-semibold text-gray-900">
-					{format(parse(currentMonth, "MMM-yyyy", new Date()), "MMM-yyyy")}
+					{format(parse(currentMonth, "MMM-yyyy", new Date()), "MMMM yyyy")}
 				</h2>
 				<div className="flex items-center">
 					<button
