@@ -1,6 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import {
 	add,
+	differenceInMonths,
 	eachDayOfInterval,
 	endOfMonth,
 	format,
@@ -11,6 +12,8 @@ import {
 	parse,
 	startOfDay,
 	startOfToday,
+	startOfMonth,
+	sub,
 } from "date-fns";
 import { useState, useEffect } from "react";
 import bulb from "/images/click-bulb.gif";
@@ -26,22 +29,16 @@ export default function Calendar({
 	numMonths,
 }) {
 	let today = startOfToday();
-	let startMonth = startOfDay(initialMonth || today);
+	let startMonth = startOfMonth(initialMonth || today);
 
-	let endMonth = startOfDay(
-		new Date(
-			add(startMonth, { months: numMonths - 1 }).getFullYear(),
-			add(startMonth, { months: numMonths - 1 }).getMonth(),
-			1
-		)
-	);
+	let endMonth = startOfDay(add(startMonth, { months: numMonths - 1 }));
 
 	let [selectedDay, setSelectedDay] = useState(today);
 	let [currentMonth, setCurrentMonth] = useState(
 		format(startMonth, "MMM-yyyy")
 	);
 
-	// Recalculate days whenever the currentMonth changes
+	// recalculates days whenever the currentMonth changes
 	useEffect(() => {
 		let firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
 		let days = eachDayOfInterval({
@@ -73,30 +70,23 @@ export default function Calendar({
 		);
 
 	function previousMonth() {
-		const firstDayPrevMonth = startOfDay(
-			add(parse(currentMonth, "MMM-yyyy", new Date()), { months: -1 })
-		);
+		const currentDate = parse(currentMonth, "MMM-yyyy", new Date());
+		const prevDate = sub(currentDate, { months: 1 });
 
-		const startOfCalendarMonth = startOfDay(
-			new Date(startMonth.getFullYear(), startMonth.getMonth(), 1)
-		);
-
-		if (firstDayPrevMonth >= startOfCalendarMonth) {
-			setCurrentMonth(format(firstDayPrevMonth, "MMM-yyyy"));
-		} else {
-			console.log("Cannot scroll back past startMonth");
+		if (startOfMonth(prevDate) >= startOfMonth(startMonth)) {
+			setCurrentMonth(format(prevDate, "MMM-yyyy"));
 		}
 	}
 
 	function nextMonth() {
-		const firstDayNextMonth = add(parse(currentMonth, "MMM-yyyy", new Date()), {
-			months: 1,
-		});
+		const currentDate = parse(currentMonth, "MMM-yyyy", new Date());
+		const nextDate = add(currentDate, { months: 1 });
 
-		if (startOfDay(firstDayNextMonth) <= startOfDay(endMonth)) {
-			setCurrentMonth(format(firstDayNextMonth, "MMM-yyyy"));
-		} else {
-			console.log("Cannot scroll past endMonth");
+		if (
+			differenceInMonths(startOfMonth(nextDate), startOfMonth(startMonth)) <
+			numMonths
+		) {
+			setCurrentMonth(format(nextDate, "MMM-yyyy"));
 		}
 	}
 
@@ -124,7 +114,7 @@ export default function Calendar({
 					</div>
 				</div>
 				<h2 className="font-semibold text-gray-900">
-					{format(parse(currentMonth, "MMM-yyyy", new Date()), "MMMM yyyy")}
+					{format(parse(currentMonth, "MMM-yyyy", new Date()), "MMM-yyyy")}
 				</h2>
 				<div className="flex items-center">
 					<button
@@ -132,8 +122,8 @@ export default function Calendar({
 						onClick={previousMonth}
 						className="p-1 text-gray-400 hover:text-gray-500"
 						disabled={
-							startOfDay(parse(currentMonth, "MMM-yyyy", new Date())) <=
-							startOfDay(startMonth)
+							startOfMonth(parse(currentMonth, "MMM-yyyy", new Date())) <=
+							startOfMonth(startMonth)
 						}
 					>
 						{startOfDay(parse(currentMonth, "MMM-yyyy", new Date())) <=
@@ -147,32 +137,6 @@ export default function Calendar({
 						)}
 					</button>
 
-					{/* <button
-						type="button"
-						onClick={nextMonth}
-						className={classNames(
-							"p-1",
-							startOfDay(parse(currentMonth, "MMM-yyyy", new Date())) >=
-								startOfDay(endMonth)
-								? "text-gray-200 cursor-default"
-								: "text-gray-400 hover:text-gray-500"
-						)}
-						disabled={
-							startOfDay(parse(currentMonth, "MMM-yyyy", new Date())) >=
-							startOfDay(endMonth)
-						}
-					>
-						<ChevronRightIcon
-							className={classNames(
-								"w-5 h-5",
-								startOfDay(parse(currentMonth, "MMM-yyyy", new Date())) >=
-									startOfDay(endMonth)
-									? "text-gray-200"
-									: "text-gray-400"
-							)}
-							aria-hidden="true"
-						/>
-					</button> */}
 					<button
 						type="button"
 						onClick={nextMonth}
@@ -184,8 +148,11 @@ export default function Calendar({
 								: "text-gray-400 hover:text-gray-500"
 						)}
 						disabled={
-							startOfDay(parse(currentMonth, "MMM-yyyy", new Date())) >=
-							endMonth
+							differenceInMonths(
+								parse(currentMonth, "MMM-yyyy", new Date()),
+								startMonth
+							) >=
+							numMonths - 1
 						}
 					>
 						<ChevronRightIcon

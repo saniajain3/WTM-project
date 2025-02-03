@@ -1,3 +1,4 @@
+import { startOfDay, startOfToday } from "date-fns";
 import Calendar from "./Calendar";
 import calendar from "/images/calendar.gif";
 const PeriodCalendar = ({
@@ -21,11 +22,11 @@ const PeriodCalendar = ({
 					onDateSelect={(date) => console.log("Selected Date:", date)}
 					cyclePhases={cyclePhases}
 					initialMonth={
-						isCalculated && nextPeriodStart && !isNaN(new Date(nextPeriodStart))
-							? new Date(nextPeriodStart)
-							: new Date()
+						isCalculated && nextPeriodStart
+							? startOfDay(new Date(nextPeriodStart))
+							: startOfToday()
 					}
-					numMonths={parseInt(selectedNumMonths, 10)}
+					numMonths={Number(selectedNumMonths) || 3}
 				/>
 			</div>
 		</div>

@@ -4,9 +4,10 @@ import Questions from "./Questions";
 import Results from "./Results";
 import PeriodCalendar from "./PeriodCalendar";
 import Tips from "./Tips";
-// import cherryImage from "images/cherry-blossom.gif";
 import cherryBgImage from "/images/cherry.jpeg";
 import tulips from "/images/tulips.jpeg";
+import { add, sub, differenceInMonths } from "date-fns";
+
 // wrapper for background and blur
 const SectionWrapper = ({ bgImage, children }) => (
 	<div
@@ -59,46 +60,48 @@ const Tracker = () => {
 		const cycleLength = parseInt(selectedCycle, 10);
 		const numMonths = parseInt(selectedNumMonths, 10);
 
+		// the next period
 		let currentStart = new Date(startDate);
+		currentStart.setDate(currentStart.getDate() + cycleLength);
+
 		const allPeriodDays = [];
 		const allFertileDays = [];
+		let firstNextPeriod = null;
 
 		for (let n = 0; n < numMonths; n++) {
-			// calculate period days for current cycle
-			const periodDays = [];
-			for (let i = 0; i < periodLength; i++) {
+			// period days
+			const periodDays = Array.from({ length: periodLength }, (_, i) => {
 				const date = new Date(currentStart);
 				date.setDate(currentStart.getDate() + i);
-				periodDays.push(date);
-			}
-			allPeriodDays.push(...periodDays);
+				return date;
+			});
 
-			const fertileStart = new Date(currentStart);
-			fertileStart.setDate(currentStart.getDate() + 14); //adjust ovulation
-			const fertileDays = [];
-			for (let j = -2; j <= 2; j++) {
-				// Calculate fertile days for the curren cyle
-				const date = new Date(fertileStart);
-				date.setDate(fertileStart.getDate() + j);
-				fertileDays.push(date);
-			}
+			//  fertile window (ovulation ± 2 days)
+			const ovulationDay = new Date(currentStart);
+			ovulationDay.setDate(currentStart.getDate() + 14);
+			const fertileDays = Array.from({ length: 5 }, (_, i) => {
+				const date = new Date(ovulationDay);
+				date.setDate(ovulationDay.getDate() - 2 + i);
+				return date;
+			});
+
+			allPeriodDays.push(...periodDays);
 			allFertileDays.push(...fertileDays);
 
-			currentStart.setDate(currentStart.getDate() + cycleLength);
-
+			// first predicted period
 			if (n === 0) {
+				firstNextPeriod = periodDays[0];
 				setNextPeriodStart(periodDays[0]);
-				const nextEnd = new Date(periodDays[0]);
-				nextEnd.setDate(periodDays[0].getDate() + periodLength - 1);
-				setNextPeriodEndDate(nextEnd);
+				setNextPeriodEndDate(periodDays[periodLength - 1]);
 			}
+
+			// next cycle
+			currentStart = add(currentStart, { days: cycleLength });
 		}
 
 		setCyclePhases({ periodDays: allPeriodDays, fertileDays: allFertileDays });
-
 		setIsCalculated(true);
 	};
-
 	const handleClickOutside = (event) => {
 		if (
 			lengthDropdownRef.current &&
@@ -111,6 +114,9 @@ const Tracker = () => {
 			!cycleDropdownRef.current.contains(event.target)
 		) {
 			setIsCycleDropdownOpen(false);
+		}
+		if (monthsRef.current && !monthsRef.current.contains(event.target)) {
+			setIsMonthsDropdownOpen(false);
 		}
 	};
 

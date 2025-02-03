@@ -6,6 +6,7 @@ import {
 import DatePicker from "./DatePicker";
 import Buttons from "./Buttons";
 import QuestionItem from "./QuestionItem";
+import dayjs from "dayjs";
 
 const Questions = ({
 	startDate,
@@ -46,7 +47,8 @@ const Questions = ({
 					content={
 						<div className="flex justify-center  md:flex-none md:justify-normal  md:ml-0 lg:ml-0 xl:ml-0">
 							<DatePicker
-								selected={startDate}
+								// selected={startDate}
+								value={dayjs(startDate)}
 								onChange={(date) => setStartDate(date)}
 							/>
 						</div>

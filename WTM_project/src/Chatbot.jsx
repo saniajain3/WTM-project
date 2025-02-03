@@ -35,6 +35,7 @@ export default function Chatbot() {
 			console.log("API Raw Response:", responseText);
 
 			const data = JSON.parse(responseText);
+			console.log(data);
 			const botMessage =
 				data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
 			if (!botMessage) {
