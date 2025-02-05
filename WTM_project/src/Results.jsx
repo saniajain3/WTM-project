@@ -1,5 +1,4 @@
 import menstruation from "/images/menstruation.gif";
-import bulb from "/images/click-bulb.gif";
 const Results = ({ cyclePhases, nextPeriodStart, nextPeriodEndDate }) => {
 	return (
 		<div className="relative flex flex-col items-center  z-10">
@@ -37,11 +36,8 @@ const Results = ({ cyclePhases, nextPeriodStart, nextPeriodEndDate }) => {
 					style={{ marginBottom: "35px" }}
 				>
 					&#9733;
-				</p>{" "}
-				{/* Solid Star (★) */}
+				</p>
 				<p className="text-gray-900 text-[16px] ">
-					{/* Just a heads-up! This tracker estimates your cycle, but everyone’s
-					different—so use it as your guide! 😊 */}
 					Just a heads-up! This tracker gives you an estimate, but your body
 					knows best—so take it as a handy guide. Stay kind to yourself! 💖
 				</p>

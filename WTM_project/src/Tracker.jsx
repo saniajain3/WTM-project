@@ -4,11 +4,9 @@ import Questions from "./Questions";
 import Results from "./Results";
 import PeriodCalendar from "./PeriodCalendar";
 import Tips from "./Tips";
-import cherryBgImage from "/images/cherry.jpeg";
-// import bow from "/images/bow.jpeg";
 import flower from "/images/flower1.jpeg";
 import tulips from "/images/tulips.jpeg";
-import { add, sub, differenceInMonths } from "date-fns";
+import { add } from "date-fns";
 
 // wrapper for background and blur
 const SectionWrapper = ({ bgImage, children }) => (
