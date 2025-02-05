@@ -95,7 +95,7 @@ export default function Calendar({
 			<div className="flex items-center justify-between">
 				<div className="flex items-center justify-center relative">
 					<div className="relative group">
-						<img src={bulb} className="cursor-pointer w-9" alt="Info Bulb" />
+						<img src={bulb} className="cursor-pointer w-9" alt="info bulb" />
 						<div className="absolute left-12 top-1/2 transform -translate-y-1/2 hidden group-hover:block mt-2 p-4 bg-gray-100 rounded-lg shadow-lg w-52 z-50">
 							<h3 className="text-lg font-semibold text-gray-900">
 								Calendar Legend

@@ -15,13 +15,42 @@ export default function Chatbot() {
 
 		try {
 			const apiKey = "AIzaSyBGa03rLGbh3GYOSDEpXXlWlioRjFcb1MI";
-			const contents = history
-				.filter((msg) => msg.text.trim() !== "")
-				.map((msg) => ({
-					role: msg.role === "bot" ? "model" : msg.role,
-					parts: [{ text: msg.text }],
-				}));
+			const systemMessage = {
+				role: "model",
 
+				parts: [
+					{
+						text: `
+						You are HerSpace, a supportive and knowledgeable AI assistant designed to empower women in health, career, and lifestyle. 
+						
+						Your primary focus areas are:
+						- Women's health & wellness (period tracking, mental health, self-care)
+						- Career growth & empowerment (resume tips, work-life balance, entrepreneurship)
+						- Lifestyle advice (relationships, confidence building, personal development)
+						
+						If a user asks about topics outside these areas (e.g., astrophysics, politics, sports, or technology), gently redirect them with a friendly message like:  
+						"I'm here to help with women's health, career, and lifestyle! Let me know how I can support you in those areas."  
+						
+						Always keep responses engaging, empathetic, and relevant to women's needs.  
+						`,
+					},
+				],
+			};
+			// const contents = history
+			// 	.filter((msg) => msg.text.trim() !== "")
+			// 	.map((msg) => ({
+			// 		role: msg.role === "bot" ? "model" : msg.role,
+			// 		parts: [{ text: msg.text }],
+			// 	}));
+			const contents = [
+				systemMessage,
+				...history
+					.filter((msg) => msg.text.trim() !== "")
+					.map((msg) => ({
+						role: msg.role === "bot" ? "model" : msg.role,
+						parts: [{ text: msg.text }],
+					})),
+			];
 			const response = await fetch(
 				`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
 				{

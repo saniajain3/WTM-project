@@ -5,6 +5,8 @@ import Results from "./Results";
 import PeriodCalendar from "./PeriodCalendar";
 import Tips from "./Tips";
 import cherryBgImage from "/images/cherry.jpeg";
+// import bow from "/images/bow.jpeg";
+import flower from "/images/flower1.jpeg";
 import tulips from "/images/tulips.jpeg";
 import { add, sub, differenceInMonths } from "date-fns";
 
@@ -179,12 +181,15 @@ const Tracker = () => {
 
 				{/* results section */}
 				{isCalculated && (
-					<SectionWrapper bgImage={cherryBgImage}>
+					<SectionWrapper bgImage={flower}>
+						{/* <div className="bg-[#ffeef9] shadow-md"> */}
 						<Results
 							cyclePhases={cyclePhases}
 							nextPeriodStart={nextPeriodStart}
 							nextPeriodEndDate={nextPeriodEndDate}
 						/>
+
+						{/* </div> */}
 					</SectionWrapper>
 				)}
 

@@ -215,8 +215,6 @@ html {
 .chat-body .bot-msg .msg-text {
 	background: #f6f2ff;
 	border-radius: 13px 13px 13px 3px;
-	/* color: #333;
-	font-style: italic; */
 }
 .bot-msg .msg-text[data-thinking="true"] {
 	/* content: ""; */
