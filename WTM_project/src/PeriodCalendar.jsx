@@ -1,5 +1,6 @@
+import { startOfDay, startOfToday } from "date-fns";
 import Calendar from "./Calendar";
-
+import calendar from "/images/calendar.gif";
 const PeriodCalendar = ({
 	cyclePhases,
 	nextPeriodStart,
@@ -8,7 +9,7 @@ const PeriodCalendar = ({
 }) => {
 	return (
 		<div className=" flex flex-col items-center relative z-10">
-			<img src="images/calendar.gif" className="w-12 cursor-pointer " />
+			<img src={calendar} className="w-12 cursor-pointer " />
 
 			<div className="flex items-center justify-center relative">
 				<h2 className="text-xl font-semibold text-center">
@@ -21,11 +22,11 @@ const PeriodCalendar = ({
 					onDateSelect={(date) => console.log("Selected Date:", date)}
 					cyclePhases={cyclePhases}
 					initialMonth={
-						isCalculated && nextPeriodStart && !isNaN(new Date(nextPeriodStart))
-							? new Date(nextPeriodStart)
-							: new Date()
+						isCalculated && nextPeriodStart
+							? startOfDay(new Date(nextPeriodStart))
+							: startOfToday()
 					}
-					numMonths={parseInt(selectedNumMonths, 10)}
+					numMonths={Number(selectedNumMonths) || 3}
 				/>
 			</div>
 		</div>

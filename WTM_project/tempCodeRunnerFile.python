@@ -1,0 +1,13 @@
+from transformers import BioGptTokenizer, BioGptForCausalLM
+
+model_name = "microsoft/BioGPT-Large-PubMedQA"
+
+# Specify local path
+local_path = "./biogpt_model"
+
+# Download and save model/tokenizer
+tokenizer = BioGptTokenizer.from_pretrained(model_name)
+tokenizer.save_pretrained(local_path)
+
+model = BioGptForCausalLM.from_pretrained(model_name)
+model.save_pretrained(local_path)

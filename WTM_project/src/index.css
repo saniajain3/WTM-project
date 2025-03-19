@@ -1,11 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Wotfard&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
 	font-family: "Bw Modelica LGC";
@@ -21,6 +22,30 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: "Wotfard";
+	src: url("/fonts/Wotfard_Regular/Wotfard_Regular_Webfont/Wotfard-Regular-webfont/wotfard-regular-webfont.ttf")
+		format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Countryside";
+	src: url("/fonts/countryside-font/Countryside-YdKj.ttf") format("truetype");
+
+	font-weight: normal;
+	font-style: normal;
+}
+
+.wotfard {
+	font-family: "Wotfard", sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: "Montserrat", sans-serif;
 	/* font-family: "Tektur", sans-serif; */
@@ -34,6 +59,25 @@ body {
 		#ffffe8
 	);
 }
+.home-desc {
+	background: linear-gradient(135deg, #8b3696, #1e90ff, #d6216a);
+	background-size: 200% 200%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	animation: gradient 4s ease infinite;
+	/* font-size: 18px; */
+}
+
+@keyframes gradient {
+	0%,
+	100% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+}
 
 * {
 	box-sizing: border-box;
@@ -46,4 +90,358 @@ html {
 .slick-prev,
 .slick-next {
 	display: none !important;
+}
+
+#chatbot-toggler {
+	position: fixed;
+	bottom: 30px;
+	right: 35px;
+	border: none;
+	height: 60px;
+	width: 60px;
+	border-radius: 98px;
+	color: white;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: linear-gradient(
+		to right,
+		#fd7da7,
+		#ff8ea8,
+		#ff9eab,
+		#feaeb2,
+		#fcbebb
+	);
+	transition: all 0.2s ease;
+	z-index: 1000;
+}
+#chatbot-toggler span {
+	position: absolute;
+}
+
+.chatbot {
+	position: fixed;
+	bottom: 30px;
+	right: 25px;
+	z-index: 1000;
+}
+
+.chatbot.show-chatbot {
+	display: flex;
+}
+
+.chatbot-popup {
+	position: fixed;
+	opacity: 0;
+	pointer-events: none;
+	bottom: 98px;
+	right: 65px;
+	width: 420px;
+	transform: scale(0.2);
+	overflow: hidden;
+	border-radius: 15px;
+	transform-origin: bottom right;
+	box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+		0 32px 64px -48px rgba(0, 0, 0, 0.5);
+	transition: all 0.1s ease;
+	z-index: 1001;
+}
+
+@media screen and (min-width: 350px) and (max-width: 767px) {
+	.chatbot-popup {
+		right: 28px;
+		width: 350px;
+	}
+}
+
+.chatbot.show-chatbot .chatbot-popup {
+	opacity: 1;
+	transform: scale(1);
+	pointer-events: auto;
+}
+.chatbot-icon svg {
+	height: 45px;
+	width: 45px;
+	padding: 6px;
+	fill: rgba(253, 125, 160, 255);
+
+	background: #fff;
+	border-radius: 50%;
+	flex: shrink;
+	margin-left: -10px;
+}
+
+.chatbot-text {
+	font-size: 1.31rem;
+	font-weight: 600;
+}
+
+.chatbot-chat-icon svg {
+	height: 45px;
+	width: 45px;
+	padding: 6px;
+	fill: #fff;
+	border-radius: 50%;
+	flex: shrink;
+}
+
+.chat-body .bot-msg {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.chat-body {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	/* height: 460px; */
+	overflow-y: auto;
+	padding: 25px 22px;
+}
+
+.chat-body .bot-msg svg {
+	margin-bottom: 2px;
+	background-image: linear-gradient(
+		to right,
+		#fd7da7,
+		#ff8ea8,
+		#ff9eab,
+		#feaeb2,
+		#fcbebb
+	);
+}
+
+.chat-body .msg .msg-text {
+	padding: 12px 16px;
+	max-width: 75%;
+	word-wrap: break-word;
+	white-space: preline;
+}
+
+.chat-body .bot-msg .msg-text {
+	background: #f6f2ff;
+	border-radius: 13px 13px 13px 3px;
+}
+.bot-msg .msg-text[data-thinking="true"] {
+	/* content: ""; */
+	color: #333;
+	font-style: italic;
+}
+
+.bot-msg .msg-text[data-thinking="true"]::after {
+	content: "Thinking";
+	animation: typing 1.5s infinite steps(3, start);
+	position: relative;
+}
+
+@keyframes typing {
+	0% {
+		content: "Thinking";
+	}
+	33% {
+		content: "Thinking.";
+	}
+	66% {
+		content: "Thinking..";
+	}
+	100% {
+		content: "Thinking...";
+	}
+}
+
+.chat-body .user-msg .msg-text {
+	margin-right: 20px;
+
+	background: linear-gradient(
+		to right,
+		#fd7da7,
+		#ff8ea8,
+		#ff9eab,
+		#feaeb2,
+		#fcbebb
+	);
+	color: #fff;
+	border-radius: 13px 13px 3px 13px;
+}
+
+.msg.user-msg {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.arrow-dropdown {
+	cursor: pointer;
+	border: 2px solid transparent;
+	outline: none;
+	background-color: transparent;
+	transition: background 0.2s ease, border-color 0.2s ease;
+	margin-right: -18px;
+	padding-top: 5px;
+	height: 38px;
+	width: 38px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.arrow-dropdown:hover {
+	background-color: #f6a0b7;
+}
+
+.icon {
+	font-size: 50px;
+	pointer-events: none;
+	padding-bottom: 9px;
+}
+
+.chat-footer {
+	/* position: absolute; */
+
+	bottom: 0;
+	width: 100%;
+	background: #fff;
+	padding: 15px 22px 20px;
+}
+
+.chat-footer .chat-form {
+	display: flex;
+	align-items: center;
+	background: #fff;
+	border-radius: 32px;
+	outline: 1px solid #cccce5;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+}
+
+.chat-footer .chat-form:focus-within {
+	outline: 2px solid #ffe8ee;
+}
+
+.chat-form .msg-input {
+	border: none;
+	outline: none;
+	background: none;
+	width: 100%;
+	height: 45px;
+	padding: 0 17px;
+	font-size: 0.95rem;
+}
+
+.chat-form .upward-arrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 22px;
+	/* width: 100%; */
+	width: 45px;
+	height: 45px;
+	border: none;
+	outline: none;
+	color: #fff;
+	flex-shrink: 0;
+	border-radius: 50%;
+	background: linear-gradient(
+		to right,
+		#fd7da7,
+		#ff8ea8,
+		#ff9eab,
+		#feaeb2,
+		#fcbebb
+	);
+	margin-right: -1px;
+}
+.upward-arrow:hover {
+	background-color: #f9d2d4;
+}
+
+.chat-form .upward-arrow {
+	display: none;
+}
+
+.chat-form .msg-input:not(:placeholder-shown) ~ .upward-arrow {
+	display: flex;
+}
+
+body {
+	--sb-track-color: #232e33;
+	--sb-thumb-color: #676767;
+	--sb-size: 10px;
+}
+
+body::-webkit-scrollbar {
+	width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+	background: var(--sb-track-color);
+	border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: var(--sb-thumb-color);
+	border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+	body {
+		scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+	}
+}
+
+body {
+	--sb-track-color: #232e33;
+	--sb-thumb-color: #676767;
+	--sb-size: 10px;
+}
+
+body::-webkit-scrollbar {
+	width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+	background: var(--sb-track-color);
+	border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: var(--sb-thumb-color);
+	border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+	body {
+		scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+	}
+}
+
+.chat-body {
+	--sb-track-color: #ffffff;
+	--sb-thumb-color: #d4d4d4;
+	--sb-size: 9px;
+	overflow-y: auto; /* Enables scrolling */
+	max-height: 400px;
+}
+
+/* Webkit-based browsers */
+.chat-body::-webkit-scrollbar {
+	width: var(--sb-size);
+}
+
+.chat-body::-webkit-scrollbar-track {
+	background: var(--sb-track-color);
+	border-radius: 3px;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+	background: var(--sb-thumb-color);
+	border-radius: 3px;
+}
+
+/* Firefox support */
+@supports not selector(::-webkit-scrollbar) {
+	.chat-body {
+		scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+	}
 }

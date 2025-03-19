@@ -11,6 +11,7 @@ export default {
 				roboto: ["Roboto", "sans-serif"],
 				tektur: ["Tektur", "sans-serif"],
 				modelica: ['"Bw Modelica LGC"', "sans-serif"],
+				countryside: ["Countryside", "sans-serif"],
 			},
 		},
 	},

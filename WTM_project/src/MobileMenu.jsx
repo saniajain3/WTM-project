@@ -1,12 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
 
-export default function MobileMenu({ isMenuOpen }) {
+export default function MobileMenu({
+	isMenuOpen,
+	scrollToSection,
+	setIsMenuOpen,
+}) {
 	const menuItems = [
-		{ name: "Home", route: "/" },
-		{ name: "Period Tracker", route: "/tracker" },
-		{ name: "Career Hub", route: "/career" },
-		{ name: "About Us", route: "/about" },
+		{ name: "Home", id: "home" },
+		{ name: "Period Tracker", id: "tracker" },
+		{ name: "Career Hub", id: "career" },
+		{ name: "Age Guides", id: "about" },
 	];
 
 	return (
@@ -22,13 +25,16 @@ export default function MobileMenu({ isMenuOpen }) {
 					<div className="text-xl font-semibold bg-[#fee7b1] py-10 m-6 rounded-3xl">
 						<ul className="flex flex-col items-center space-y-5">
 							{menuItems.map((item) => (
-								<li key={item.name}>
-									<Link
-										to={item.route}
+								<li key={item.id}>
+									<button
+										onClick={() => {
+											scrollToSection(item.id);
+											setIsMenuOpen(false);
+										}}
 										className="font-bold text-gray-900 hover:text-[#615846] transition-all duration-200"
 									>
 										{item.name}
-									</Link>
+									</button>
 								</li>
 							))}
 							<li>
