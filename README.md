@@ -17,12 +17,12 @@ Follow these steps to set up the project on your local machine:
 
 Clone the repository from GitHub:
 
-   `git clone https://github.com/sanskriti49/WTM-project-temp.git
-   cd WTM-project-temp`
+   `git clone https://github.com/saniajain3/WTM-project.git
+   cd WTM-project`
 
 Navigate to the project directory:
 
-    `cd WTM-project\WTM_roject`
+    `cd WTM-project\WTM_project`
 
 
 ### 2. Install Dependencies
