@@ -52,7 +52,7 @@ const Navbar = () => {
 					{/* Logo */}
 					<div className="flex-1 flex justify-center items-center md:flex-none md:w-auto md:justify-start">
 						<img src={logo} className="w-16 cursor-pointer" alt="Logo" />
-						<button className="font-[600] text-[26px] md:text-2xl xl:text-3xl  font-inter">
+						<button className="font-[500] text-purple-950 tracking-wider text-[28px] md:text-2xl xl:text-[28px] py-4 font-countryside">
 							HerSpace
 						</button>
 					</div>
@@ -89,7 +89,7 @@ const Navbar = () => {
 						</ul>
 
 						<div>
-							<button className="font-bold text-[#d3a645] border-2 border-[#bb963e] hover:text-gray-900 hover:bg-[#ffe9bc] rounded-3xl p-2 duration-200">
+							<button className="cursor-pointer font-bold text-[#fd7da7] border-2 border-[#ab5e78] hover:text-gray-900 hover:bg-[#ffe9bc] rounded-3xl p-2 duration-200">
 								Login
 							</button>
 						</div>

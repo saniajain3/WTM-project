@@ -30,6 +30,14 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: "Countryside";
+	src: url("/fonts/countryside-font/Countryside-YdKj.ttf") format("truetype");
+
+	font-weight: normal;
+	font-style: normal;
+}
+
 .wotfard {
 	font-family: "Wotfard", sans-serif;
 }
