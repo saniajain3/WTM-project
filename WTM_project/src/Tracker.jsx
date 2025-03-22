@@ -207,7 +207,7 @@ const Tracker = () => {
 
 				{/* tips section */}
 			</div>
-			<div className="bg-[#ffccd5] lg:col-span-3 max-w-screen-lg mx-auto w-3/5 md:px-8 sm:px-8 lg:px-4  shadow-md rounded-lg py-5 my-9">
+			<div className="bg-[#ffe2e8] lg:col-span-3 max-w-screen-lg mx-auto w-3/5 md:px-8 sm:px-8 lg:px-4  shadow-md rounded-lg py-5 my-9">
 				<Tips />
 			</div>
 		</div>
