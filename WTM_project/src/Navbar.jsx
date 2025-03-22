@@ -40,8 +40,8 @@ const Navbar = () => {
 	const menuItems = [
 		{ name: "Home", id: "home" },
 		{ name: "Period Tracker", id: "tracker" },
-		{ name: "Career Hub", id: "career" },
-		{ name: "Age Guides", id: "about" },
+		{ name: "Age Guides", id: "age" },
+		{ name: "Support", id: "about" },
 	];
 
 	return (
