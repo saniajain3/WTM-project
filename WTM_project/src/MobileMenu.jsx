@@ -9,6 +9,7 @@ export default function MobileMenu({
 		{ name: "Home", id: "home" },
 		{ name: "Period Tracker", id: "tracker" },
 		{ name: "Age Guides", id: "about" },
+		{ name: "Support", id: "about" },
 	];
 
 	return (
