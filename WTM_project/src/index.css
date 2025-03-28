@@ -38,6 +38,12 @@
 	font-style: normal;
 }
 
+@layer base {
+	button {
+		@apply cursor-pointer;
+	}
+}
+
 .wotfard {
 	font-family: "Wotfard", sans-serif;
 }
@@ -87,6 +93,7 @@ body {
 html {
 	font-size: 16px;
 }
+
 .slick-prev,
 .slick-next {
 	display: none !important;

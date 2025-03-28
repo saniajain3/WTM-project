@@ -75,30 +75,29 @@ const Navbar = () => {
 
 					{/* Laptop menu */}
 					<div className="hidden md:flex items-center space-x-5 ml-auto">
-						<ul className="flex space-x-6">
+						<ul className="flex space-x-5">
 							{menuItems.map((item) => (
 								<li key={item.id}>
 									<button
 										onClick={() => scrollToSection(item.id)}
-										className="font-bold text-gray-900 lg:text-base md:text-base sm:text-xs hover:text-[#b8a886] transition-all duration-200"
+										className="p-1 cursor-pointer font-bold text-gray-900 lg:text-base md:text-base sm:text-xs hover:text-[#b8a886] transition-all duration-200"
 									>
 										{item.name}
 									</button>
 								</li>
 							))}
 						</ul>
-
-						<div>
-							<button className="cursor-pointer font-bold text-[#fd7da7] border-2 border-[#ab5e78] hover:text-gray-900 hover:bg-[#ffe9bc] rounded-3xl p-2 duration-200">
-								Login
-							</button>
-						</div>
-
-						<div>
+						<button
+							className="cursor-pointer font-bold text-[#fd7da7] border-2 border-[#ab5e78] hover:text-gray-900 hover:bg-[#ffe9bc] rounded-3xl p-2 duration-200"
+							style={{ cursor: "pointer" }}
+						>
+							Login
+						</button>
+						{/* <div>
 							<button className="text-2xl hover:bg-[#fee7b1] rounded-full p-2 duration-140">
 								<CiSearch />
 							</button>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>
