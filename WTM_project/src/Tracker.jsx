@@ -147,7 +147,7 @@ const Tracker = () => {
 				<div
 					className={`lg:col-span-1  md:col-span-2 ${
 						!isCalculated
-							? "lg:col-span-3 max-w-screen-lg mx-auto"
+							? "lg:col-span-3 max-w-(--breakpoint-lg) mx-auto"
 							: "lg:col-span-1 "
 					}`}
 				>
@@ -193,7 +193,7 @@ const Tracker = () => {
 
 				{/* calendar section */}
 				{isCalculated && (
-					<div className="lg:col-span-1 md:col-span-1 lg:max-w-screen-sm mx-auto lg:mx-0 h-full flex">
+					<div className="lg:col-span-1 md:col-span-1 lg:max-w-(--breakpoint-sm) mx-auto lg:mx-0 h-full flex">
 						<SectionWrapper bgImage={tulips}>
 							<PeriodCalendar
 								cyclePhases={cyclePhases}
@@ -207,7 +207,7 @@ const Tracker = () => {
 
 				{/* tips section */}
 			</div>
-			<div className="bg-[#ffe2e8] lg:col-span-3 max-w-screen-lg mx-auto w-3/5 md:px-8 sm:px-8 lg:px-4  shadow-md rounded-lg py-5 my-9">
+			<div className="bg-[#ffe2e8] lg:col-span-3 max-w-(--breakpoint-lg) mx-auto w-3/5 md:px-8 sm:px-8 lg:px-4  shadow-md rounded-lg py-5 my-9">
 				<Tips />
 			</div>
 		</div>

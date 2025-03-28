@@ -1,41 +1,66 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Wotfard&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap')
+layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Wotfard&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@font-face {
-	font-family: "Bw Modelica LGC";
-	src: url("/fonts/Bw Modelica/otf/BwModelica-Bold.otf") format("opentype");
-	font-weight: bold;
-	font-display: swap;
+@config '../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }
-@font-face {
-	font-family: "Bw Modelica LGC";
-	src: url("/fonts/Bw Modelica/otf/BwModelica-Regular.otf") format("opentype");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
 
-@font-face {
-	font-family: "Wotfard";
-	src: url("/fonts/Wotfard_Regular/Wotfard_Regular_Webfont/Wotfard-Regular-webfont/wotfard-regular-webfont.ttf")
-		format("truetype");
-	font-weight: normal;
-	font-style: normal;
-}
+@layer utilities {
+  @font-face {
+    font-family: 'Bw Modelica LGC';
+    src: url('/fonts/Bw Modelica/otf/BwModelica-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Bw Modelica LGC';
+    src: url('/fonts/Bw Modelica/otf/BwModelica-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
-@font-face {
-	font-family: "Countryside";
-	src: url("/fonts/countryside-font/Countryside-YdKj.ttf") format("truetype");
+  @font-face {
+    font-family: 'Wotfard';
+    src: url('/fonts/Wotfard_Regular/Wotfard_Regular_Webfont/Wotfard-Regular-webfont/wotfard-regular-webfont.ttf')
+      format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-	font-weight: normal;
-	font-style: normal;
+  @font-face {
+    font-family: 'Countryside';
+    src: url('/fonts/countryside-font/Countryside-YdKj.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+  }
 }
 
 @layer base {

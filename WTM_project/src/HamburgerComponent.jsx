@@ -6,7 +6,7 @@
 // 			<Hamburger
 // 				toggled={toggled}
 // 				toggle={toggle}
-// 				className="p-3 flex items-center justify-center rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+// 				className="p-3 flex items-center justify-center rounded-md focus:outline-hidden focus:ring-2 focus:ring-gray-500"
 // 				size={size}
 // 				style={{
 // 					padding: "8px",
@@ -39,7 +39,7 @@ export default function HamburgerComponent({ toggled, toggle, size = 20 }) {
 				<Hamburger
 					toggled={toggled}
 					toggle={toggle}
-					className="p-3 flex items-center justify-center rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+					className="p-3 flex items-center justify-center rounded-md focus:outline-hidden focus:ring-2 focus:ring-gray-500"
 					size={size}
 					style={{
 						padding: "8px",

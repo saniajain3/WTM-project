@@ -138,7 +138,7 @@ export default function Chatbot() {
 				)}
 			</button>
 			<div className="chatbot-popup w-4/5">
-				<div className="flex space-y-2 justify-between  rounded-tl-lg rounded-tr-lg py-5 px-8 bg-gradient-to-r from-[#fd7da7] via-[#ff9eab] to-[#fcbebb]">
+				<div className="flex space-y-2 justify-between  rounded-tl-lg rounded-tr-lg py-5 px-8 bg-linear-to-r from-[#fd7da7] via-[#ff9eab] to-[#fcbebb]">
 					<div className="chat-header flex items-center">
 						<div className="chatbot-icon">
 							<ChatbotIcon />

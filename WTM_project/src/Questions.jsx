@@ -66,7 +66,7 @@ const Questions = ({
 						>
 							<button
 								onClick={() => setIsLengthDropdownOpen(!isLengthDropdownOpen)}
-								className="shadow w-1/2 md:w-1/3 lg:w-2/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700 font-medium"
+								className="shadow-sm w-1/2 md:w-1/3 lg:w-2/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700 font-medium"
 							>
 								{selectedLength}
 								{isLengthDropdownOpen ? (
@@ -76,7 +76,7 @@ const Questions = ({
 								)}
 							</button>
 							{isLengthDropdownOpen && (
-								<ul className="absolute z-10 mt-11 w-1/2 md:w-1/3 lg:w-1/3 bg-white border shadow rounded-md max-h-40 overflow-y-auto">
+								<ul className="absolute z-10 mt-11 w-1/2 md:w-1/3 lg:w-1/3 bg-white border shadow-sm rounded-md max-h-40 overflow-y-auto">
 									{lengthOptions.map((option) => (
 										<li
 											key={option}
@@ -106,7 +106,7 @@ const Questions = ({
 						>
 							<button
 								onClick={() => setIsCycleDropdownOpen(!isCycleDropdownOpen)}
-								className="shadow w-1/2 md:w-1/3 lg:w-2/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700 font-medium "
+								className="shadow-sm w-1/2 md:w-1/3 lg:w-2/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700 font-medium "
 							>
 								{selectedCycle}
 								{isCycleDropdownOpen ? (
@@ -116,7 +116,7 @@ const Questions = ({
 								)}
 							</button>
 							{isCycleDropdownOpen && (
-								<ul className="absolute z-10 mt-11 w-1/2 md:w-1/3 lg:w-1/3 bg-white border shadow rounded-md max-h-40 overflow-y-auto">
+								<ul className="absolute z-10 mt-11 w-1/2 md:w-1/3 lg:w-1/3 bg-white border shadow-sm rounded-md max-h-40 overflow-y-auto">
 									{cycleOptions.map((option) => (
 										<li
 											key={option}
@@ -146,7 +146,7 @@ const Questions = ({
 						>
 							<button
 								onClick={() => setIsMonthsDropdownOpen(!isMonthsDropdownOpen)}
-								className="shadow w-1/2 md:w-1/3 lg:w-2/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700 font-medium "
+								className="shadow-sm w-1/2 md:w-1/3 lg:w-2/3 bg-white border rounded-md p-2 flex justify-between items-center text-gray-700 font-medium "
 							>
 								{selectedNumMonths}
 								{isMonthsDropdownOpen ? (
@@ -156,7 +156,7 @@ const Questions = ({
 								)}
 							</button>
 							{isMonthsDropdownOpen && (
-								<ul className="absolute z-10 mt-11 w-1/2 md:w-1/3 lg:w-1/3 bg-white border shadow rounded-md max-h-40 overflow-y-auto">
+								<ul className="absolute z-10 mt-11 w-1/2 md:w-1/3 lg:w-1/3 bg-white border shadow-sm rounded-md max-h-40 overflow-y-auto">
 									{monthOptions.map((option) => (
 										<li
 											key={option}
